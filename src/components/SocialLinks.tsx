@@ -25,29 +25,26 @@ const socialLinks = [
   {
     name: "CV",
     icon: <FileText className="w-5 h-5" />,
-    href: "/cv.pdf",
+    href: "/pdf/Reyan_Jimenez_2026.pdf",
     color: "hover:text-green-400",
   },
 ];
 
 export default function SocialLinks() {
   return (
-    <div className="flex gap-4">
-      {socialLinks.map((link, index) => (
-        <motion.a
-          key={link.name}
-          href={link.href}
-          target="_blank"
-          rel="noopener noreferrer"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 + index * 0.1 }}
-          className={`p-2 transition-colors duration-200 text-zinc-400 ${link.color}`}
-          aria-label={link.name}
-        >
-          {link.icon}
-        </motion.a>
+    <ul className="ml-1 mt-8 flex items-center gap-5" aria-label="Social media">
+      {socialLinks.map((link) => (
+        <li key={link.name} className="text-xs">
+          <a
+            href={link.href}
+            target="_blank"
+            className={`block text-zinc-400 transition-colors duration-200 ${link.color}`}
+            aria-label={link.name}
+          >
+            {link.icon}
+          </a>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }

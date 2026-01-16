@@ -11,19 +11,26 @@ interface ExperienceItemProps {
 
 export default function ExperienceItem({ company, role, period, description }: ExperienceItemProps) {
     return (
-        <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="relative pl-8 before:absolute before:left-0 before:top-2 before:h-[calc(100%-8px)] before:w-px before:bg-zinc-800"
-        >
-            <div className="absolute left-[-4px] top-2 h-2 w-2 rounded-full bg-zinc-600" />
-            <div className="flex flex-col gap-1">
-                <span className="text-xs font-medium text-zinc-500 uppercase tracking-widest">{period}</span>
-                <h3 className="text-lg font-semibold text-zinc-100">{role}</h3>
-                <span className="text-sm font-medium text-zinc-400">{company}</span>
-                <p className="mt-2 text-sm text-zinc-500 leading-relaxed">{description}</p>
+        <div className="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+            {/* Overlay para hover */}
+            <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-zinc-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
+
+            <header className="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-zinc-500 sm:col-span-2">
+                {period}
+            </header>
+
+            <div className="z-10 sm:col-span-6">
+                <h3 className="font-medium leading-snug text-zinc-200">
+                    <div>
+                        <span className="inline-block">
+                            {role} · {company}
+                        </span>
+                    </div>
+                </h3>
+                <p className="mt-2 text-sm leading-normal text-zinc-400">
+                    {description}
+                </p>
             </div>
-        </motion.div>
+        </div>
     );
 }
