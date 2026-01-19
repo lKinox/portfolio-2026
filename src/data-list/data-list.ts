@@ -11,6 +11,17 @@ export interface Experience {
     company: string;
     period: string;
     description: string;
+    tags: string[];
+    link: string;
+}
+
+export interface AllProjects {
+    year: string;
+    title: string;
+    madeAt?: string;
+    builtWith: string[];
+    link?: string;
+    github?: string;
 }
 
 export const skills = {
@@ -23,21 +34,21 @@ export const skills = {
 export const projects: Project[] = [
     {
         title: "Noon",
-        description: "Main page de una empresa de desarrollo de software.",
+        description: "Main page de una empresa de desarrollo de software. Desarrollado con Next.js, Tailwind, Vercel y OpenAI. Con un Chatbot con IA para gestionar consultas de los clientes y generar prototipos de proyectos utilizando el motor de Vercel V0.",
         tags: ["Next.js", "Tailwind", "Vercel", "OpenAI"],
         link: "https://nooncode.dev/",
     },
     {
-        title: "Nova Bank App",
-        description: "Interfaz bancaria minimalista con enfoque en la experiencia de usuario y transacciones en tiempo real.",
-        tags: ["React Native", "TypeScript", "Node.js"],
-        link: "https://github.com",
+        title: "Visualisto",
+        description: "Landing page de un proyecto personal de un gestor de catálogos de productos. Desarrollado con Next.js, Tailwind y Vercel.",
+        tags: ["Next.js", "Tailwind", "Vercel"],
+        link: "https://landing-visualisto.vercel.app/",
     },
     {
-        title: "Flux Design System",
-        description: "Un sistema de diseño escalable para aplicaciones empresariales, optimizado para velocidad y accesibilidad.",
-        tags: ["Storybook", "Framer Motion", "React"],
-        link: "https://github.com",
+        title: "Scrapper App",
+        description: "API Rest que permite extraer datos de una páginas de supermercados y guardarlos en una base de datos MongoDB. Desarrollado con Python, Flask, Selenium y MongoDB.",
+        tags: ["Python", "Flask", "Selenium", "MongoDB"],
+        link: "https://github.com/lKinox/App-Scrapy-and-MongoDB-for-App-Scrap.git",
     },
 ];
 
@@ -46,36 +57,187 @@ export const experiences: Experience[] = [
         role: "Programador Fullstack",
         company: "Newry Global",
         period: "2025 — Presente",
-        description: "Desarrollo de APIs, aplicaciones web y mantenimiento de sistemas existentes.",
+        description: "Colaborar y desarrollar APIs, aplicaciones web, dar mantenimiento de sistemas existentes. Colaboración en el desarrollo de nuevas funcionalidades y mejora de la experiencia de usuario.",
+        tags: ["Flask", "Node.js", "MySQL", "Angular", "Docker"],
+        link: "https://newryglobal.com/",
     },
     {
-        role: "Programador",
+        role: "Programador / Soporte IT",
         company: "Betfine24",
         period: "2024 — 2025",
-        description: "Desarrollo de páginas web, APIs, aplicaciones web y mantenimiento de sistemas existentes.",
+        description: "Desarrollo de páginas web, APIs, aplicaciones web y mantenimiento de sistemas existentes. Soporte técnico a usuarios y resolución de problemas técnicos.",
+        tags: ["Flask", "Wordpress", "Next.js", "Node.js", "HTML", "CSS", "JavaScript"],
+        link: "https://newryglobal.com/",
     },
     {
         role: "Programador Web",
         company: "Waopress",
         period: "2024 — 2024",
-        description: "Desarrollo y mantenimiento de páginas web.",
+        description: "Colaborar y desarrollar páginas web para clientes utilizando Wordpress con plugins y temas personalizados.",
+        tags: ["Wordpress", "PHP", "HTML", "CSS", "JavaScript"],
+        link: "https://newryglobal.com/",
     },
     {
         role: "Programador Web",
         company: "Trifecta",
         period: "2023 — 2024",
-        description: "Desarrollo y mantenimiento de páginas web, creacion de apps y APIs de uso interno.",
+        description: "Desarrollar, mantener y actualizar páginas web de proyectos internos y para clientes. Desarrollar APIs y aplicaciones web de uso interno.",
+        tags: ["Wordpress", "PHP", "HTML", "CSS", "JavaScript"],
+        link: "https://newryglobal.com/",
     },
     {
         role: "Programador Web",
         company: "Elitelca",
         period: "2023 — 2023",
-        description: "Desarrollo y mantenimiento de páginas web",
+        description: "Colaborar en el desarrollo y mantenimiento de páginas web para clientes utilizando Wordpress.",
+        tags: ["Wordpress", "Python", "HTML", "CSS", "JavaScript"],
+        link: "https://newryglobal.com/",
     },
     {
         role: "Programador Web",
         company: "Posa Studio Creativo",
         period: "2022 — 2023",
-        description: "Desarrollo de landing para clientes globales y gestión de sistema administrativo interno.",
+        description: "Construir y dar mantenimiento a páginas web para clientes utilizando Wordpress. Creación de landing pages y mantenimiento de sistema administrativo interno.",
+        tags: ["Wordpress", "HTML", "CSS", "PHP"],
+        link: "https://newryglobal.com/",
+    },
+];
+
+export const allProjects: AllProjects[] = [
+    {
+        year: "2026",
+        title: "Portafolio V2",
+        madeAt: "2026",
+        builtWith: ["Next.js", "Tailwind", "Vercel"],
+        link: "https://reyanj.vercel.app/",
+        github: "https://github.com/lKinox/portfolio-2026",
+    },
+    {
+        year: "2025",
+        title: "Noon",
+        madeAt: "2025",
+        builtWith: ["Next.js", "Tailwind", "Vercel", "OpenAI"],
+        link: "https://nooncode.dev/",
+        github: "",
+    },
+    {
+        year: "2025",
+        title: "YourSpanishVisa",
+        madeAt: "2025",
+        builtWith: ["Wordpress", "PHP"],
+        link: "https://yourspanishvisa.com/",
+        github: "",
+    },
+    {
+        year: "2025",
+        title: "API de Gestión de Alertas",
+        madeAt: "2025",
+        builtWith: ["Python", "Flask", "Docker"],
+        link: "",
+        github: "https://github.com/lKinox/Prueba-Tecnica",
+    },
+    {
+        year: "2025",
+        title: "Web app de gestión de quinielas",
+        madeAt: "2025",
+        builtWith: ["Next.js", "Tailwind", "Vercel", "Node.js", "Supabase"],
+        link: "https://betfine-quiniela.vercel.app/",
+        github: "https://github.com/lKinox/betfine-quiniela",
+    },
+    {
+        year: "2025",
+        title: "Visualisto",
+        madeAt: "2025",
+        builtWith: ["Next.js", "Tailwind", "Vercel"],
+        link: "https://landing-visualisto.vercel.app/",
+        github: "https://github.com/lKinox/Visualisto",
+    },
+    {
+        year: "2025",
+        title: "Betfine24",
+        madeAt: "2025",
+        builtWith: ["Next.js", "Tailwind"],
+        link: "https://betfine24.com/",
+        github: "",
+    },
+    {
+        year: "2025",
+        title: "Ni Un Autónomo Más",
+        madeAt: "2025",
+        builtWith: ["Wordpress", "Bricks", "HTML", "CSS", "JavaScript"],
+        link: "https://niunautonomomas.com/",
+        github: "",
+    },
+    {
+        year: "2025",
+        title: "API JWT + Firebase",
+        madeAt: "2025",
+        builtWith: ["Flask", "Firebase", "JWT"],
+        link: "",
+        github: "https://github.com/lKinox/APIRest-Flask-JWT-Firebase",
+    },
+    {
+        year: "2025",
+        title: "Waopress",
+        madeAt: "2025",
+        builtWith: ["Wordpress", "Bricks", "HTML", "CSS", "JavaScript"],
+        link: "https://waopress.com/",
+        github: "",
+    },
+    {
+        year: "2025",
+        title: "Portafolio V1",
+        madeAt: "2025",
+        builtWith: ["Next.js", "Tailwind", "Vercel"],
+        link: "https://reyanj.netlify.app/",
+        github: "https://github.com/lKinox/Portfolio-Reyan",
+    },
+    {
+        year: "2024",
+        title: "Ginqo",
+        madeAt: "2024",
+        builtWith: ["Wordpress", "Bricks", "HTML", "CSS", "JavaScript", "PHP"],
+        link: "https://ginqopetfood.com/",
+        github: "",
+    },
+    {
+        year: "2024",
+        title: "Serpis",
+        madeAt: "2024",
+        builtWith: ["Wordpress"],
+        link: "https://www.serpis.com/",
+        github: "",
+    },
+    {
+        year: "2023",
+        title: "DantDiver",
+        madeAt: "2023",
+        builtWith: ["Wordpress", "Elementor"],
+        link: "https://dantdiver.com/",
+        github: "",
+    },
+    {
+        year: "2023",
+        title: "Elitellca",
+        madeAt: "2023",
+        builtWith: ["Wordpress", "Elementor"],
+        link: "https://elitellca.com/",
+        github: "",
+    },
+    {
+        year: "2022",
+        title: "Posa Studio Creativo",
+        madeAt: "2022",
+        builtWith: ["Wordpress", "Elementor"],
+        link: "https://www.comunicacionvisual.com/",
+        github: "",
+    },
+    {
+        year: "2022",
+        title: "Coding Steam",
+        madeAt: "2022",
+        builtWith: ["HTML", "CSS", "JavaScript"],
+        link: "https://codingsteam.com/",
+        github: "https://github.com/lKinox/Project-CodingSTEAM",
     },
 ];

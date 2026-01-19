@@ -5,7 +5,10 @@ import { motion } from "framer-motion";
 import SocialLinks from "@/components/SocialLinks";
 import ProjectCard from "@/components/ProjectCard";
 import ExperienceItem from "@/components/ExperienceItem";
+import Stick from "@/components/stick";
 import { projects, experiences } from "@/data-list/data-list";
+import { FileText, AppWindow } from "lucide-react";
+import Link from "next/link";
 
 // Definimos las secciones para el menú
 const navItems = [
@@ -60,7 +63,7 @@ export default function Home() {
                                 Fullstack Developer
                             </h2>
                             <p className="mt-4 max-w-xs leading-normal">
-                                Construyo interfaces digitales accesibles, robustas y con un diseño impecable.
+                                Construyo, programo y desempeño.
                             </p>
 
                             {/* NAVEGACIÓN DINÁMICA */}
@@ -76,13 +79,13 @@ export default function Home() {
                                                 >
                                                     {/* La línea indicadora */}
                                                     <span className={`nav-indicator mr-4 h-px transition-all motion-reduce:transition-none ${isActive
-                                                            ? "w-16 bg-zinc-200"
-                                                            : "w-8 bg-zinc-600 group-hover:w-16 group-hover:bg-zinc-200"
+                                                        ? "w-16 bg-zinc-200"
+                                                        : "w-8 bg-zinc-600 group-hover:w-16 group-hover:bg-zinc-200"
                                                         }`}></span>
                                                     {/* El texto */}
                                                     <span className={`nav-text text-xs font-bold uppercase tracking-widest transition-colors ${isActive
-                                                            ? "text-zinc-200"
-                                                            : "text-zinc-500 group-hover:text-zinc-200"
+                                                        ? "text-zinc-200"
+                                                        : "text-zinc-500 group-hover:text-zinc-200"
                                                         }`}>
                                                         {item.name}
                                                     </span>
@@ -102,11 +105,23 @@ export default function Home() {
 
                         <section id="about" className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24">
                             <p className="mb-4">
-                                Soy un desarrollador que disfruta la intersección entre el diseño y la ingeniería...
+                                Soy un desarrollador <span className="text-zinc-100 font-semibold">Fullstack</span> enfocado
+                                en la intersección entre el diseño funcional y la ingeniería robusta. Mi
+                                objetivo principal es transformar necesidades complejas en interfaces intuitivas
+                                y sistemas escalables. Actualmente, formo parte del equipo de <a href="https://newryglobalmedia.com/" target="_blank" className="text-zinc-100 font-semibold">Newry Global Media</a>,
+                                donde diseño y arquitecturo APIs y soluciones web que optimizan procesos críticos
+                                y elevan la experiencia del usuario final.
                             </p>
-                            {/* Contenido de prueba */}
+                            <p className="mb-4">
+                                Mi día a día se basa en perfeccionar un stack centrado en <span className="text-zinc-100 font-semibold">Python (Flask/Django), React y Node.js</span>,
+                                manteniendo como objetivo que el código no solo funcione, sino que sea limpio y mantenible
+                                a largo plazo. A lo largo de mi trayectoria en diversos ecosistemas tecnológicos, he
+                                desarrollado una capacidad de adaptación que me permite colaborar eficientemente en
+                                equipos multidisciplinarios.
+                            </p>
                             <p>
-                                Actualmente me enfoco en perfeccionar mi stack con <span className="text-zinc-200">React, Next.js y Node.js</span>.
+                                Cuando no estoy frente al monitor, me encontrarás explorando nuevas herramientas experimentales,
+                                disfrutando del béisbol, escuchando música o pasando tiempo con mi perro, Gauss.
                             </p>
                         </section>
 
@@ -115,6 +130,10 @@ export default function Home() {
                                 {experiences.map((exp) => (
                                     <ExperienceItem key={exp.company + exp.role} {...exp} />
                                 ))}
+                                <Link href="/pdf/Reyan_Jimenez_2026.pdf" target="_blank" className="flex items-center gap-2 text-zinc-100">
+                                    <FileText className="w-5 h-5" />
+                                    <span>Ver resumen completo...</span>
+                                </Link>
                             </div>
                         </section>
 
@@ -123,6 +142,10 @@ export default function Home() {
                                 {projects.map((project) => (
                                     <ProjectCard key={project.title} {...project} />
                                 ))}
+                                <Link href="/projects" target="_blank" className="flex items-center gap-2 text-zinc-100">
+                                    <AppWindow className="w-5 h-5" />
+                                    <span>Ver otros proyectos...</span>
+                                </Link>
                             </div>
                         </section>
 

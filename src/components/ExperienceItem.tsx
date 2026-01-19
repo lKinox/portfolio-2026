@@ -7,9 +7,10 @@ interface ExperienceItemProps {
     role: string;
     period: string;
     description: string;
+    tags: string[];
 }
 
-export default function ExperienceItem({ company, role, period, description }: ExperienceItemProps) {
+export default function ExperienceItem({ company, role, period, description, tags }: ExperienceItemProps) {
     return (
         <div className="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
             {/* Overlay para hover */}
@@ -30,6 +31,16 @@ export default function ExperienceItem({ company, role, period, description }: E
                 <p className="mt-2 text-sm leading-normal text-zinc-400">
                     {description}
                 </p>
+                <div className="flex flex-wrap gap-2 pt-2">
+                    {tags.map((tag) => (
+                        <span
+                            key={tag}
+                            className="rounded-full bg-zinc-800 px-3 py-1 text-xs font-medium text-zinc-400 border border-zinc-700/50"
+                        >
+                            {tag}
+                        </span>
+                    ))}
+                </div>
             </div>
         </div>
     );
