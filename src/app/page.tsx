@@ -150,7 +150,7 @@ export default function Home() {
                         </section>
 
                         <footer className="max-w-md pb-16 text-sm text-zinc-500 sm:pb-0">
-                            <p>© {new Date().getFullYear()} — Reyan Jimenez.</p>
+                            <p>© {new Date().getFullYear()} — Reyan Jimenez. Creado con Next.js y desplegado con Vercel.</p>
                         </footer>
                     </main>
                 </div>
